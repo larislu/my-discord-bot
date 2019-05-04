@@ -15,6 +15,6 @@ async def on_message(message):
     	await channel.send("Test Successful")
         #await client.send(message.channel, "Test Successful")
 
-#tokendat = open("token.dat", "r")
-#client.run(tokendat.read().strip())
-client.run(os.environ["ACCESS_TOKEN"])
+tokendat = open("token.dat", "r")
+client.run(tokendat.read().strip())
+#client.run(os.environ["ACCESS_TOKEN"])
