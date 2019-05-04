@@ -34,9 +34,9 @@ async def on_message(message):
             await channel.send(puzzles[randIndex])
 
     if message.content == ".refresh":
-        dbdat = open("db.dat", "r")
+        #dbdat = open("db.dat", "r")
         #con = psycopg2.connect(dbdat.read().strip(), sslmode='require')
-        #print("Connection Successful")
+        print("Connection Successful")
         con = psycopg2.connect(os.environ["DATABASE_URL"], sslmode='require')
         cur = con.cursor()
         cur.execute("DELETE FROM puzzles")
