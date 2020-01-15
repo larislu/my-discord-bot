@@ -24,23 +24,23 @@ async def on_ready():
     handler.set_current_puzzle(current)
     print(handler.get_current_puzzle())
 
-    answer = "tests"
-    command = "UPDATE answers SET answers = array_append(answers, \'" + answer + "\') WHERE url = \'" + "test" + "\'"
-    print(command)
-    cur.execute(command)
+    # answer = "tests"
+    # command = "UPDATE answers SET answers = array_append(answers, \'" + answer + "\') WHERE url = \'" + "test" + "\'"
+    # print(command)
+    # cur.execute(command)
 
     #command = "SELECT answers FROM answers WHERE url = \'" + current[0] + "\'"
     #statement = "INSERT INTO answers(url, answers) VALUES (\'" + "test" + "\', ARRAY[]::TEXT[])"
     #print(statement)
     #cur.execute(statement)
 
-    command = "SELECT * FROM answers"
+    command = "SELECT answers FROM answers WHERE url = \'test\'"
     print(command)
     cur.execute(command)
     grabbed_answers = cur.fetchall()
     print(grabbed_answers)
     if grabbed_answers:
-        answers = grabbed_answers[0][1]
+        answers = grabbed_answers[0][0]
         handler.set_guesses(answers)
         print(answers)
 

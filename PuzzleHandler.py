@@ -12,6 +12,9 @@ class PuzzleHandler:
         self.solved = []
         self.client = client
 
+    def pull_puzzles_potluck(self):
+        print("todo")
+
     def pull_puzzles_cpc(self):
         print("todo")
 
